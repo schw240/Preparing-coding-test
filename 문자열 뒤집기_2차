@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <string.h>
+ 
+void reverseString(char* s);
+ 
+int start = 0;
+int end = 0;
+ 
+int main(void)
+{
+  char s[1002]; 
+  int num;
+  int i,j;
+  int len;
+ 
+  scanf("%d",&num); // 몇번 반복할지 입력
+ 
+  while(getchar() != '\n'){} // 버퍼 비우기 
+ 
+  // 문자열 순서 거꾸로 뒤집기
+  for(j = 0 ; j < num ; j++)
+  {
+    start = 0;
+    end = 0;
+    gets(s);
+    len = strlen(s);  
+     
+     for(i = 0 ; i < len ; i++) 
+     {
+         if(s[i] == ' ' || i == len-1) // 띄어쓰기가 있는 부분 또는 마지막 단어는 띄어쓰기가 없으니 마지막단어는 예외적으로 처리 
+         {
+          end = i-1;  // 띄어쓰기를 가리키는 i에서 -1을 하여 단어의 마지막 위치로 end를 설정 
+          if(i == len - 1) end = i;  // 마지막 단어는 예외적으로 처리한다. 
+        
+          reverseString(s); // 뒤집는 함수 
+          start = i+1; // start는 띄어쓰기 그다음 즉 다음 단어의 첫번째 위치로 설정 
+         }
+     }
+  
+    printf("%s\n", s);   // 뒤집어진 문자열 출력
+  }
+    
+  return 0;
+}
+ 
+ 
+ 
+void reverseString(char* s) 
+{
+  int i;
+  char temp;
+  for (i = start; i <= (end + start) / 2; i++) // mellon일 경우 mel까지만 봐주면 되기에 /2를 설정  
+  {                                            // +start를 해준 이유는 다음 단어로 갈 시 start가 처음이라고 생각해야되니 +start 
+    temp = s[i];
+    s[i] = s[end - i + start];
+    s[end - i + start] = temp;
+  }
+}
+
+
+출처: https://www.crocus.co.kr/293 [Crocus]
