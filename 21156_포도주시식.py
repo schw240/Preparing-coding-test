@@ -1,7 +1,6 @@
 n = int(input())
 wine = [0]
 dp = [0] * (n+1)
-#와인 입력
 for i in range(1,n+1):
     wine.append(int(input()))
 #print(wine)
