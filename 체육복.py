@@ -1,0 +1,10 @@
+def solution(n, lost, reserve):
+    set_reverse = set(reserve) - set(lost)
+    set_lost = set(lost) - set(reserve)
+    for i in set_reverse:
+        if i-1 in set_lost:
+            set_lost.remove(i-1)
+        elif i+1 in set_lost:
+            set_lost.remove(i+1)
+    return n-len(set_lost)
+print(solution(5, [2,4], [1,3,5]))
