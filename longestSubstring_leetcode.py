@@ -3,7 +3,7 @@ class Solution:
         if len(s) == 0:
             return 0
         
-        result = 1
+        result = 0
         
         for i in range(len(s)):
             for j in range(i+1, len(s)):
