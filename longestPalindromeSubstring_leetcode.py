@@ -1,17 +1,18 @@
-class Solution:
-    def longestPalindrome(self, s: str) -> str:
-        def expand(left, right):
-            while left >= 0 and right <= len(s) and s[left] == s[right-1]:
-                left -= 1
-                right += 1
-            return s[left+1:right-1]
-        
-        if len(s) < 2 or s == s[::-1]:
-            return s
-        
-        result = ''
-        
-        for i in range(len(s) - 1):
-            result = max(result, expand(i, i+1), expand(i, i+2), key=len)
-            
-        return result
+# def longestPalindrome(s):
+#     res = ""
+#     for i in range(len(s)):
+#         print(i)
+#         for j in range(len(s),i,-1):
+#             print(j)
+#             if len(res)>=j-i:
+#                 print(i,j)
+#                 break
+#             elif s[i:j] == s[i:j][::-1]:
+#                 print(s[i:j][::-1])
+#                 res = s[i:j]
+#                 print(res)
+#     return res
+# print(longestPalindrome(["babad"]))
+s = "babad"
+print(s[0:5])
+print(s[0:5][::-1])
