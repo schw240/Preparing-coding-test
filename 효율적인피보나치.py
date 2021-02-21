@@ -7,5 +7,5 @@ def fibo2(n):
     return f[n]
 
 
-for i in range(11):
+for i in range(21):
     print(fibo2(i), end=" ")
