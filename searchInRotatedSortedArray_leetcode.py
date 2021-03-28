@@ -14,11 +14,11 @@ class Solution:
                 return m
             elif nums[m] > target:
                 if nums[m] >= nums[s]:
-                    if nums[s] > target:
+                    if nums[s] > target:  # s m 증가 e #5 6 7 8 1 2 3 4
                         s = m+1
-                    else:  # nums[s] < target
+                    else:  # nums[s] < target # s m 증가 e target 위치 파악하기
                         e = m-1
-                else:  # nums[m] < nums[s] 5(S) 6 7 8 1 2(m) 3 4
+                else:  # nums[m] < nums[s] 5(S) 6 7 8 1 2(m) 3 4 s m 떨어지는 경우 e 그뒤 다시 증가
                     e = m-1
             else:  # nums[m] < target
                 if nums[m] >= nums[s]:
