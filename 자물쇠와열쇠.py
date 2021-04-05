@@ -1,6 +1,6 @@
 def rotate(key):
-    n = len(key)  # 행길이
-    m = len(key[0])  # 열길이
+    n = len(key)
+    m = len(key[0])
     matrix = [[0] * n for i in range(m)]
     for i in range(n):
         for j in range(m):

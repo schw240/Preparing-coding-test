@@ -3,6 +3,20 @@ from collections import deque
 # 보드 크기 N
 # 사과의 개수 K
 
+
+def check(x, y):
+    return True if 0 <= x and x < N and 0 <= y and y < N else False
+
+
+def turn_around(direction):
+    global d
+    if direction == 'D':
+        d = (d+1) % 4
+    else:
+        d = (d-1) % 4
+    return d
+
+
 N = int(input())
 K = int(input())
 board = [[0] * (N) for i in range(N)]
@@ -30,19 +44,6 @@ dy = [0, 1, 0, -1]
 d = 1
 times = 0
 nx, ny = 0, 0
-
-
-def check(x, y):
-    return True if 0 <= x and x < N and 0 <= y and y < N else False
-
-
-def turn_around(direction):
-    d = 0
-    if direction == 'D':
-        d = (d+1) % 4
-    else:
-        d = (d-1) % 4
-    return d
 
 
 while True:
