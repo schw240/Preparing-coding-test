@@ -13,15 +13,14 @@ N, K = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(N)]
 S, X, Y = map(int, input().split())
 viruses = []
-# 바이러스 개수만큼 큐 생성
-# print(viruses)
+
 for i in range(N):
     for j in range(N):
         if graph[i][j] != 0:
             # 바이러스 숫자, x위치, y위치, 시간
             viruses.append((graph[i][j], i, j, 0))
 
-#print(viruses)
+# print(viruses)
 
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
