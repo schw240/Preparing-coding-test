@@ -60,8 +60,6 @@ def watch():
 
 # 벽 3개 뽑기
 for walls in combinations(empty_list, 3):
-
-
     # 벽 세우기
     for wall in walls:
         x, y = wall
