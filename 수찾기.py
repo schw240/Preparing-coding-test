@@ -4,16 +4,16 @@ M = int(input())
 B = list(map(int, input().split()))
 
 
-def binary_search(num, A, start, end):
+def binary_search(num, arr, start, end):
     if start > end:
         return 0
     mid = (start + end) // 2
-    if num == A[mid]:
+    if num == arr[mid]:
         return 1
-    elif num < A[mid]:
-        return binary_search(num, A, start, mid - 1)
+    elif num < arr[mid]:
+        return binary_search(num, arr, start, mid - 1)
     else:
-        return binary_search(num, A, mid+1, end)
+        return binary_search(num, arr, mid + 1, end)
 
 
 A.sort()
