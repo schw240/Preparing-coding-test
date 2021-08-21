@@ -50,5 +50,4 @@ for i in range(P):
     max_cnt += 1
 
 
-print()
 print(max_cnt)
